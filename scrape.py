@@ -9,7 +9,7 @@ def netflix_login():
         browser
         return browser
     except NameError:    
-        chrome_options = Options() #to allow headless mode
+        chrome_options = Options() #to allow headless browser mode
         chrome_options.add_argument("--headless")
         chrome_options.add_argument("--wondow-size=1920x1080")
         browser=webdriver.Chrome(chrome_options=chrome_options)
