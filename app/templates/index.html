@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>Hi there, welcome to Flix</h1><br>
+    Flix allows a quick search for movies in Netflix PT
+    <p>
+    <div class="row">
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+    </p>   
+{% endblock %}
