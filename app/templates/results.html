@@ -4,31 +4,18 @@
 {% block app_content %}
     <h1>Search results</h1><br>
     <p>
-    <div class="row">
-        <div class="col-md-4">
-            {{ links[0] }}
-        </div>
-        <div class="col-md-4">
-            <img src={{ imgs[0] }}>
-        </div>        
-    </div>
+    {% for search, result in results.items() %}
     <br>
     <div class="row">
-        <div class="col-md-4">
-            {{ links[1] }}
+        <div class="col-md-3">
+            <bold>{{ search }}</bold>
         </div>
-        <div class="col-md-4">
-            <img src={{ imgs[1] }}>
-        </div>        
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-md-4">
-            {{ links[2] }}
+        {% for i in range(0,3) %}    
+        <div class="col-md-3">
+            {{ result[0][i] }}<br>
+            <img src={{ result[1][i] }} width=200 height=120>   
         </div>
-        <div class="col-md-4">
-            <img src={{ imgs[2] }}>
-        </div>        
-    </div>
-    </p>   
+        {% endfor %}
+    </div>    
+    {% endfor %}      
 {% endblock %}
