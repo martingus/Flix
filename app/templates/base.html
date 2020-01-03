@@ -21,7 +21,9 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url_for('index') }}">Search</a></li>
+                    {% if not logged_in %}<li><a href="{{ url_for('login') }}">Login</a></li>{% endif %}                   
+                    {% if logged_in %}<li><a href="{{ url_for('search') }}">Search</a></li>{% endif %} 
+                    {% if logged_in %}<li><a href="{{ url_for('logout') }}">Logout</a></li>{% endif %} 
                 </ul>
             </div>
         </div>
